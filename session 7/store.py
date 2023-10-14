@@ -47,15 +47,17 @@ def edit() :
     your_choice = int(input("Please enter your choice : "))
 
     for product in PRODUCTS :
-        if product["code"] == code and your_choice == 1 :
-            product["name"] = input("New name : ")
-        elif product["code"] == code and your_choice == 2 :
-            product["price"] = input("New price : ")
-        elif product["code"] == code and your_choice == 3 :
-            product["count"] = input("New count : ")
-        # break
-
+        if product["code"] == code :
+            if your_choice == 1 :
+                product["name"] = input("New name : ")
+            elif your_choice == 2 :
+                product["price"] = input("New price : ")
+            elif your_choice == 3 :
+                product["count"] = input("New count : ")
         print("~~~ Informations successfully updated ~~~")
+        break
+    else :
+        print("Not found")
 
 def remove() :
     user_input = input("Enter code : ")
